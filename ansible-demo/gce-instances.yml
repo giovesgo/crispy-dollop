@@ -1,0 +1,54 @@
+---
+# VanHack Test - Deploy to cloud
+- name: Create Compute Engine instance
+  hosts: local
+  gather_facts: False
+  vars_files:
+    - gce_vars/auth
+    - gce_vars/machines
+    - gce_vars/zone
+  tasks:
+    - name: Create an IP address for the instance
+      gcp_compute_address:
+        name: "{{ name_zonea }}-ip"
+        region: "{{ region }}"
+        project: "{{ project }}"
+        service_account_file: "{{ credentials_file }}"
+        auth_kind: "{{ auth_kind }}"
+      register: gcea_ip
+    - name: Bring up the instance in the default zone.
+      gcp_compute_instance:
+        name: "{{ name_zonea }}"
+        machine_type: "{{ machine_type }}"
+        disks:
+          - auto_delete: true
+            boot: true
+            initialize_params:
+              source_image: "{{ image }}"
+        network_interfaces:
+          - access_configs:
+              - name: External NAT
+                nat_ip: "{{ gcea_ip }}"
+                type: ONE_TO_ONE_NAT
+        tags:
+          items:
+            - http-server
+            - https-server
+        zone: "{{ zone }}"
+        project: "{{ project }}"
+        service_account_file: "{{ credentials_file }}"
+        auth_kind: "{{ auth_kind }}"
+      register: gcea
+  post_tasks:
+    - name: Wait for instance SSH
+      wait_for: delay=1 host={{ gcea_ip.address }} port=22 state=started timeout=90
+    - name: Save host data
+      add_host: 
+        hostname: '{{ gcea_ip.address }}'
+        groups: 'gce_instances_ips'
+        #ansible_connection: 'ssh'
+        #ansible_user: 'sa_105108314438323269218'
+        #ansible_ssh_private_key_file: ssh-key-ansible-sa.pub
+        #ansible_ssh_user: 'sa_105108314438323269218'
+        #ansible_ssh_private_key_file: '/home/gio/.ssh/id_rsa'
+

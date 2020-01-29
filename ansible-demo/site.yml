@@ -1,0 +1,4 @@
+---
+# VanHack Test
+- import_playbook: gce-instances.yml
+- import_playbook: bootstrap.yml

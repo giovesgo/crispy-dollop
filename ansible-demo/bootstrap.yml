@@ -1,0 +1,9 @@
+---
+# VanHack Test
+- name: Install docker and docker-compose
+  hosts: gce_instances_ips
+  remote_user: gio
+  become: yes
+  become_method: sudo
+  roles:
+    - setup

@@ -1,0 +1,27 @@
+version: "2.0"
+
+services:
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_DB: people
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: 3xp4ns10n
+    ports:
+      - "5432:5432"
+    command: postgres -c listen_addresses='*'
+
+  app:
+    image: giojiteiro/vanhacktest:0.2.0
+    depends_on: [db]
+    restart: always
+    environment:
+      DB_SERVER_HOST: db
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: 3xp4ns10n
+      DB_SERVER_DBNAME: people
+      USE_DB_ROOT_USER: "false"
+      DEBUG_MODE: "true"
+    ports:
+      - "80:5000"

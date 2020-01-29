@@ -1,0 +1,97 @@
+---
+# This playbook contains docker actions that will be run on "remote" host.
+ 
+# sudo apt-get install *
+- name: Install docker packages
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+  tags:
+     - docker
+                                      
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+- name: Add Docker official GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags:
+    - docker
+                                                        
+# sudo apt-key fingerprint 0EBFCD88
+- name: Verify key with the fingerprint
+  apt_key:
+    id: 0EBFCD88
+    state: present
+  tags:
+    - docker
+                                                                         
+# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable
+- name: Set up apt repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
+    state: present
+    update_cache: yes
+  tags:
+    - docker
+                                                                                              
+# sudo apt-get update
+- name: Update apt packages
+  apt:
+    update_cache: yes
+  tags:
+    - docker
+                                                                                                           
+# sudo apt-get install docker-ce=18.03.*
+- name: Install docker
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+  notify: Start docker on boot
+  tags:
+    - docker
+                                                                                                                                  
+# sudo groupadd docker
+- name: Create docker group
+  group:
+    name: "docker"
+    state: present
+  tags:
+    - docker
+                                                                                                                                                   
+# sudo usermod -aG docker gio
+- name: Add user to docker group
+  user:
+    name: "root"
+    group: "docker"
+    append: yes
+  tags:
+    - docker
+
+# sudo apt-get install docker-compose=1.8.*
+- name: Install docker-compose
+  apt:
+    name: docker-compose
+    state: present
+    update_cache: yes
+  tags:
+    - docker
+
+# pip instal docker-py
+- name: Up to date docker-py 
+  pip:
+    name: docker-py==1.10.6a1
+
+# Deploy docker-composer.yml
+- name: Deploy composer definition
+  copy: src=docker-compose.yml dest=/opt
+        owner=root group=docker mode=0644
+
+# Start services with docker-compose
+- name: Start services
+  shell: docker-compose up -d
+  args:
+    chdir: /opt

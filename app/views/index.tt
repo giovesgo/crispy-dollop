@@ -1,0 +1,37 @@
+<body class="bg-light">
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/gio-head-shot.png" alt="" width="72" height="72">
+        <h2>Persona</h2>
+        <p class="lead">Please provide the following information</p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="form-horizontal" action="/persona" method="post">
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="user_name" placeholder="Jhon Doe" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="color">Favorite Color</label>
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Blue">
+                </div>
+
+                <h4 class="mb-3">Pet</h4>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="cat" name="pet" type="radio" value="cat" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="cat">Cat</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="dog" name="pet" type="radio" value="dog" class="custom-control-input" required>
+                        <label class="custom-control-label" for="dog">Dog</label>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Send my Info</button>
+            </form>
+        </div>
+    </div>

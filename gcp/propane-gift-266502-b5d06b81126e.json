@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "propane-gift-266502",
+  "private_key_id": "b5d06b81126e8b16b1088aa1c8ee4946c26d48ca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDHh848yxA7KkrC\nQFZJ2E6wlD/biw2Mk/ug1cDxDui5nr2SxNvVrxcKw7LbBgXTDykYLQlKKqWOTTDP\nGOFnSKC359kJUYTm1fxZjjuxhZ2VfknQ87e3gAEQNxQ6maZlMrvG6mj+UNp9eOgM\n+SAfGC5bavk+kh7A+B4zcSElMue6W+3OAix8ybu9TOeT0UQNuBtTHEOXAwDUTTsV\nvMq4UynoR657ws4KXyZ2wHvGx30ScNMu6aSZiO0MQowCytAtNWVpf/TIt7hvBvxy\nIy+Jr7nEVXHFXb/Ah+LtI4j+iUORq+eCrN8bagIog3GUubIIAp1dcdDULL1g1NuV\npkmxxNh9AgMBAAECggEADJRux7fwyR4okk3enYTDqfqKz84Y96xBJi8xMobjXDKa\ngVVOho7QXSzLSxJP4zJBP8WKdfsxhBgwnoSoehZ4OugP77hh8Jt8r8PEgTPV+d3O\ntxu/5pPth+bFFyW7+do56w0OkLwrGP6QDiNV0l1irNUA1mBS4TfeJZWkG+rf9R3n\nyREFz8gkpra8rdlzjVteBEDQoizKMEonztJn0DFf7TbArULnC7lFKKyeJMkcUoJq\narAu8pG6/Iy0j4BymTsgZsK6FHXEgM68LEOGw0cVF0dha0AAvLthUKhRHY/2URuC\nKvl0iALUOrNUYVUTgxgNAFJNdcLIJ8G2i3k+ed1DMQKBgQD93QEv0Rx/2jdU3fRu\nviDzqgN3c97g2/zGGQww/B9TjUxYeUsuFwQip2Cy18+6imSiYxPd0TjQPphk9iVy\nvpI3KqF7VEDypqrxNkhY8UV29a86yXLA7H3JwJ9rbzvppp60a3xMcXAFlEsTgi+0\nIRYgAYIQzheZxL95sYwJGAy1UQKBgQDJNbsczqoVXS6cOHbnsWTlLGtd7rBt3YRw\nEr+rFQVzPWQ5o0QQHYyTw8gMdkKnWc7ZAzp+hSayNx5cbDAYaA+slRLo9yfWO5BK\nQ7dV3doy9xk0W7ku2dCW2cux2F1ua+lluHniAb3frKH1FkjyZ1iJSzB7istb58Lw\nzFGvorwVbQKBgBawBqggVxyyAtnp0CuJgGZmXlLxnwyXfHqzyFwkXCRab2VEycw/\nsFXsgX7aPK1eKuo8Uo0zYpFx1qrHOMeNcoHNpIriF7/X11UhVcvlHCEqidOGJ2RI\nfmFmfpjaYw9ZnbtgE8a9KJbHDwKaUusVPeX0XIxl7sQGSlp03J//bztRAoGAKWE5\nd/UwmXAuc8ZQ/dlHrLHz6r953T5fTEUu0dpi4o5PnGLtTnslPAZZj+aKUqxvk8XM\nM9TiXmhjgBJn2b0c7BtEZlDeCnr5c6x1ed1EUJLsxg3PCcmV0lA8Sfj7Tgg3WcoU\nltxQ1j1EmYjZu7BxTtr9v4qNw/rn5mm+quZG1AkCgYAJr856UPSeHHRevkUr7NMW\n15NwSwDOKKrRp55DGT2mVbePJv2bDcxKaF/GReybPIVwcPmtJYbLe3qU18yVH9UN\nEnXgp37mtLhpDab+YIscag5Y/0MuFLJKZuZC6q0CWfwSnLzh1Z1rf1/iGK8jR9qK\nhVJRTFfTmFFxC+Up4LxIrQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ansible-account@propane-gift-266502.iam.gserviceaccount.com",
+  "client_id": "105108314438323269218",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ansible-account%40propane-gift-266502.iam.gserviceaccount.com"
+}

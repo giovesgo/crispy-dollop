@@ -1,0 +1,6 @@
+---
+# Google Compute Engine required authentication global variables
+# (Replace 'YOUR_PROJECT_ID' with the Project ID used in creating your GCP project.)
+project: propane-gift-266502
+credentials_file: /home/gio/devel/vht/gcp/propane-gift-266502-b5d06b81126e.json
+auth_kind: serviceaccount
